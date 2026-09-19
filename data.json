@@ -1,0 +1,1667 @@
+{
+  "app_user": [
+    {
+      "_id": "user-001",
+      "email": "owner1@layan.test",
+      "phone": "+447700900001",
+      "password_hash": "$2b$12$seedhash001",
+      "user_type": "business_owner",
+      "created_at": "2026-09-01T09:00:00Z"
+    },
+    {
+      "_id": "user-002",
+      "email": "staff1@layan.test",
+      "phone": "+447700900002",
+      "password_hash": "$2b$12$seedhash002",
+      "user_type": "staff",
+      "created_at": "2026-09-01T09:05:00Z"
+    },
+    {
+      "_id": "user-003",
+      "email": "customer1@layan.test",
+      "phone": "+447700900003",
+      "password_hash": "$2b$12$seedhash003",
+      "user_type": "customer",
+      "created_at": "2026-09-01T09:10:00Z"
+    }
+  ],
+  "business": [
+    {
+      "_id": "business-001",
+      "owner_user_id": "user-001",
+      "legal_name": "London Grooming Ltd",
+      "display_name": "London Grooming",
+      "slug": "london-grooming",
+      "category": "barber",
+      "description": "Modern barber studio in London.",
+      "cover_image_url": "https://example.com/barber-cover.jpg",
+      "profile_image_url": "https://example.com/barber-profile.jpg",
+      "cancellation_policy": {
+        "window_hours": 24,
+        "fee_type": "percentage",
+        "fee_value": 50
+      },
+      "verification_status": "business",
+      "business_score": 92.5,
+      "is_active": true,
+      "created_at": "2026-09-01T09:00:00Z",
+      "updated_at": "2026-09-01T09:00:00Z"
+    },
+    {
+      "_id": "business-002",
+      "owner_user_id": "user-001",
+      "legal_name": "Glow Beauty Ltd",
+      "display_name": "Glow Beauty",
+      "slug": "glow-beauty",
+      "category": "salon",
+      "description": "Beauty and hair salon.",
+      "cover_image_url": "https://example.com/salon-cover.jpg",
+      "profile_image_url": "https://example.com/salon-profile.jpg",
+      "cancellation_policy": {
+        "window_hours": 12,
+        "fee_type": "fixed",
+        "fee_value": 1000
+      },
+      "verification_status": "identity",
+      "business_score": 88,
+      "is_active": true,
+      "created_at": "2026-09-02T09:00:00Z",
+      "updated_at": "2026-09-02T09:00:00Z"
+    },
+    {
+      "_id": "business-003",
+      "owner_user_id": "user-001",
+      "legal_name": "Nail Studio Ltd",
+      "display_name": "Nail Studio",
+      "slug": "nail-studio",
+      "category": "nails",
+      "description": "Professional nail care studio.",
+      "cover_image_url": "https://example.com/nails-cover.jpg",
+      "profile_image_url": "https://example.com/nails-profile.jpg",
+      "cancellation_policy": {
+        "window_hours": 24,
+        "fee_type": "percentage",
+        "fee_value": 25
+      },
+      "verification_status": "business",
+      "business_score": 90,
+      "is_active": true,
+      "created_at": "2026-09-03T09:00:00Z",
+      "updated_at": "2026-09-03T09:00:00Z"
+    }
+  ],
+  "location": [
+    {
+      "_id": "location-001",
+      "business_id": "business-001",
+      "name": "Central London Branch",
+      "address_line1": "10 Baker Street",
+      "address_line2": "",
+      "city": "London",
+      "postcode": "W1U 3BW",
+      "country": "UK",
+      "lat": 51.5225,
+      "lng": -0.1571,
+      "opening_hours": {
+        "mon": [
+          {
+            "open": "09:00",
+            "close": "19:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "09:00",
+            "close": "19:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "09:00",
+            "close": "19:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "09:00",
+            "close": "20:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "09:00",
+            "close": "20:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:00",
+            "close": "18:00"
+          }
+        ],
+        "sun": []
+      },
+      "mobile_service_radius_km": 10,
+      "is_active": true,
+      "created_at": "2026-09-01T09:00:00Z"
+    },
+    {
+      "_id": "location-002",
+      "business_id": "business-002",
+      "name": "East London Branch",
+      "address_line1": "25 High Street",
+      "address_line2": "",
+      "city": "London",
+      "postcode": "E1 6AN",
+      "country": "UK",
+      "lat": 51.5165,
+      "lng": -0.0718,
+      "opening_hours": {
+        "mon": [
+          {
+            "open": "09:00",
+            "close": "18:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "09:00",
+            "close": "18:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "09:00",
+            "close": "18:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "09:00",
+            "close": "20:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "09:00",
+            "close": "20:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:00",
+            "close": "17:00"
+          }
+        ],
+        "sun": []
+      },
+      "mobile_service_radius_km": 8,
+      "is_active": true,
+      "created_at": "2026-09-02T09:00:00Z"
+    },
+    {
+      "_id": "location-003",
+      "business_id": "business-003",
+      "name": "West London Branch",
+      "address_line1": "8 King Street",
+      "address_line2": "",
+      "city": "London",
+      "postcode": "W6 0QU",
+      "country": "UK",
+      "lat": 51.492,
+      "lng": -0.223,
+      "opening_hours": {
+        "mon": [
+          {
+            "open": "10:00",
+            "close": "19:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "10:00",
+            "close": "19:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:00",
+            "close": "19:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:00",
+            "close": "20:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "10:00",
+            "close": "20:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:00",
+            "close": "18:00"
+          }
+        ],
+        "sun": []
+      },
+      "mobile_service_radius_km": 5,
+      "is_active": true,
+      "created_at": "2026-09-03T09:00:00Z"
+    }
+  ],
+  "customer": [
+    {
+      "_id": "user-003",
+      "first_name": "Rijoan",
+      "last_name": "Rashid",
+      "gender_pref": "any",
+      "marketing_opt_in": true,
+      "created_at": "2026-09-01T09:10:00Z"
+    },
+    {
+      "_id": "customer-002",
+      "first_name": "James",
+      "last_name": "Wilson",
+      "gender_pref": "any",
+      "marketing_opt_in": true,
+      "created_at": "2026-09-02T10:00:00Z"
+    },
+    {
+      "_id": "customer-003",
+      "first_name": "Sofia",
+      "last_name": "Martin",
+      "gender_pref": "female",
+      "marketing_opt_in": false,
+      "created_at": "2026-09-03T11:00:00Z"
+    }
+  ],
+  "staff": [
+    {
+      "_id": "staff-001",
+      "user_id": "user-002",
+      "business_id": "business-001",
+      "location_id": "location-001",
+      "display_name": "Alex Carter",
+      "role": "senior_barber",
+      "commission_pct": 40,
+      "permissions": {
+        "can_manage_bookings": true
+      },
+      "is_active": true
+    },
+    {
+      "_id": "staff-002",
+      "user_id": "user-002",
+      "business_id": "business-002",
+      "location_id": "location-002",
+      "display_name": "Emma Brown",
+      "role": "stylist",
+      "commission_pct": 35,
+      "permissions": {
+        "can_manage_bookings": true
+      },
+      "is_active": true
+    },
+    {
+      "_id": "staff-003",
+      "user_id": "user-002",
+      "business_id": "business-003",
+      "location_id": "location-003",
+      "display_name": "Olivia Smith",
+      "role": "nail_artist",
+      "commission_pct": 30,
+      "permissions": {
+        "can_manage_bookings": false
+      },
+      "is_active": true
+    }
+  ],
+  "staff_availability": [
+    {
+      "_id": "availability-001",
+      "staff_id": "staff-001",
+      "weekday": 1,
+      "start_time": "09:00",
+      "end_time": "17:00"
+    },
+    {
+      "_id": "availability-002",
+      "staff_id": "staff-002",
+      "weekday": 2,
+      "start_time": "10:00",
+      "end_time": "18:00"
+    },
+    {
+      "_id": "availability-003",
+      "staff_id": "staff-003",
+      "weekday": 3,
+      "start_time": "10:00",
+      "end_time": "18:00"
+    }
+  ],
+  "staff_time_off": [
+    {
+      "_id": "timeoff-001",
+      "staff_id": "staff-001",
+      "start_at": "2026-09-21T13:00:00Z",
+      "end_at": "2026-09-21T15:00:00Z",
+      "reason": "Personal appointment"
+    },
+    {
+      "_id": "timeoff-002",
+      "staff_id": "staff-002",
+      "start_at": "2026-09-22T12:00:00Z",
+      "end_at": "2026-09-22T14:00:00Z",
+      "reason": "Training"
+    },
+    {
+      "_id": "timeoff-003",
+      "staff_id": "staff-003",
+      "start_at": "2026-09-23T15:00:00Z",
+      "end_at": "2026-09-23T16:00:00Z",
+      "reason": "Personal appointment"
+    }
+  ],
+  "service_category": [
+    {
+      "_id": "category-001",
+      "name": "Hair"
+    },
+    {
+      "_id": "category-002",
+      "name": "Beauty"
+    },
+    {
+      "_id": "category-003",
+      "name": "Nails"
+    }
+  ],
+  "service": [
+    {
+      "_id": "service-001",
+      "business_id": "business-001",
+      "category_id": "category-001",
+      "name": "Classic Haircut",
+      "description": "Classic men's haircut.",
+      "duration_minutes": 45,
+      "buffer_before_minutes": 5,
+      "buffer_after_minutes": 5,
+      "base_price_minor": 2500,
+      "lead_time_hours": 1,
+      "is_instant_book": true,
+      "is_active": true
+    },
+    {
+      "_id": "service-002",
+      "business_id": "business-002",
+      "category_id": "category-002",
+      "name": "Hair Styling",
+      "description": "Professional hair styling.",
+      "duration_minutes": 60,
+      "buffer_before_minutes": 5,
+      "buffer_after_minutes": 10,
+      "base_price_minor": 4500,
+      "lead_time_hours": 2,
+      "is_instant_book": true,
+      "is_active": true
+    },
+    {
+      "_id": "service-003",
+      "business_id": "business-003",
+      "category_id": "category-003",
+      "name": "Gel Manicure",
+      "description": "Gel manicure treatment.",
+      "duration_minutes": 60,
+      "buffer_before_minutes": 0,
+      "buffer_after_minutes": 10,
+      "base_price_minor": 3500,
+      "lead_time_hours": 2,
+      "is_instant_book": true,
+      "is_active": true
+    }
+  ],
+  "staff_service": [
+    {
+      "_id": "staff-001_service-001",
+      "staff_id": "staff-001",
+      "service_id": "service-001",
+      "price_override_minor": 2800,
+      "duration_override_minutes": 45
+    },
+    {
+      "_id": "staff-002_service-002",
+      "staff_id": "staff-002",
+      "service_id": "service-002",
+      "price_override_minor": 5000,
+      "duration_override_minutes": 60
+    },
+    {
+      "_id": "staff-003_service-003",
+      "staff_id": "staff-003",
+      "service_id": "service-003",
+      "price_override_minor": 3800,
+      "duration_override_minutes": 65
+    }
+  ],
+  "portfolio_media": [
+    {
+      "_id": "media-001",
+      "business_id": "business-001",
+      "staff_id": "staff-001",
+      "service_id": "service-001",
+      "media_url": "https://example.com/haircut-1.jpg",
+      "media_type": "image",
+      "before_after_pair_url": "https://example.com/haircut-before-after.jpg",
+      "tags": [
+        "fade",
+        "classic"
+      ],
+      "created_at": "2026-09-01T10:00:00Z"
+    },
+    {
+      "_id": "media-002",
+      "business_id": "business-002",
+      "staff_id": "staff-002",
+      "service_id": "service-002",
+      "media_url": "https://example.com/style-1.jpg",
+      "media_type": "image",
+      "before_after_pair_url": null,
+      "tags": [
+        "styling",
+        "hair"
+      ],
+      "created_at": "2026-09-02T10:00:00Z"
+    },
+    {
+      "_id": "media-003",
+      "business_id": "business-003",
+      "staff_id": "staff-003",
+      "service_id": "service-003",
+      "media_url": "https://example.com/nails-1.jpg",
+      "media_type": "image",
+      "before_after_pair_url": null,
+      "tags": [
+        "gel",
+        "nails"
+      ],
+      "created_at": "2026-09-03T10:00:00Z"
+    }
+  ],
+  "appointment": [
+    {
+      "_id": "appointment-001",
+      "business_id": "business-001",
+      "location_id": "location-001",
+      "staff_id": "staff-001",
+      "customer_id": "user-003",
+      "start_at": "2026-09-21T10:00:00Z",
+      "end_at": "2026-09-21T10:45:00Z",
+      "status": "confirmed",
+      "source_channel": "marketplace",
+      "total_price_minor": 2800,
+      "deposit_required_minor": 500,
+      "recurrence_rule": null,
+      "group_booking_id": null,
+      "notes": "Regular haircut",
+      "created_at": "2026-09-15T09:00:00Z"
+    },
+    {
+      "_id": "appointment-002",
+      "business_id": "business-002",
+      "location_id": "location-002",
+      "staff_id": "staff-002",
+      "customer_id": "customer-002",
+      "start_at": "2026-09-22T10:00:00Z",
+      "end_at": "2026-09-22T11:00:00Z",
+      "status": "confirmed",
+      "source_channel": "marketplace",
+      "total_price_minor": 5000,
+      "deposit_required_minor": 1000,
+      "recurrence_rule": null,
+      "group_booking_id": null,
+      "notes": "Hair styling",
+      "created_at": "2026-09-15T10:00:00Z"
+    },
+    {
+      "_id": "appointment-003",
+      "business_id": "business-003",
+      "location_id": "location-003",
+      "staff_id": "staff-003",
+      "customer_id": "customer-003",
+      "start_at": "2026-09-23T11:00:00Z",
+      "end_at": "2026-09-23T12:05:00Z",
+      "status": "attended",
+      "source_channel": "marketplace",
+      "total_price_minor": 3800,
+      "deposit_required_minor": 500,
+      "recurrence_rule": null,
+      "group_booking_id": null,
+      "notes": "Gel manicure",
+      "created_at": "2026-09-16T10:00:00Z"
+    }
+  ],
+  "appointment_service": [
+    {
+      "_id": "appointment-service-001",
+      "appointment_id": "appointment-001",
+      "service_id": "service-001",
+      "price_minor": 2800,
+      "duration_minutes": 45
+    },
+    {
+      "_id": "appointment-service-002",
+      "appointment_id": "appointment-002",
+      "service_id": "service-002",
+      "price_minor": 5000,
+      "duration_minutes": 60
+    },
+    {
+      "_id": "appointment-service-003",
+      "appointment_id": "appointment-003",
+      "service_id": "service-003",
+      "price_minor": 3800,
+      "duration_minutes": 65
+    }
+  ],
+  "appointment_status_history": [
+    {
+      "_id": "status-history-001",
+      "appointment_id": "appointment-001",
+      "old_status": "pending",
+      "new_status": "confirmed",
+      "changed_by": "user-001",
+      "changed_at": "2026-09-15T09:01:00Z"
+    },
+    {
+      "_id": "status-history-002",
+      "appointment_id": "appointment-002",
+      "old_status": "pending",
+      "new_status": "confirmed",
+      "changed_by": "user-001",
+      "changed_at": "2026-09-15T10:01:00Z"
+    },
+    {
+      "_id": "status-history-003",
+      "appointment_id": "appointment-003",
+      "old_status": "confirmed",
+      "new_status": "attended",
+      "changed_by": "user-002",
+      "changed_at": "2026-09-23T12:10:00Z"
+    }
+  ],
+  "waitlist_entry": [
+    {
+      "_id": "waitlist-001",
+      "business_id": "business-001",
+      "customer_id": "user-003",
+      "service_id": "service-001",
+      "staff_id": "staff-001",
+      "preferred_date_range": {
+        "start": "2026-09-25",
+        "end": "2026-09-27"
+      },
+      "preferred_time_range": {
+        "start": "2026-09-25T09:00:00Z",
+        "end": "2026-09-27T18:00:00Z"
+      },
+      "status": "active",
+      "created_at": "2026-09-18T09:00:00Z"
+    },
+    {
+      "_id": "waitlist-002",
+      "business_id": "business-002",
+      "customer_id": "customer-002",
+      "service_id": "service-002",
+      "staff_id": "staff-002",
+      "preferred_date_range": {
+        "start": "2026-09-26",
+        "end": "2026-09-28"
+      },
+      "preferred_time_range": {
+        "start": "2026-09-26T10:00:00Z",
+        "end": "2026-09-28T18:00:00Z"
+      },
+      "status": "notified",
+      "created_at": "2026-09-18T10:00:00Z"
+    },
+    {
+      "_id": "waitlist-003",
+      "business_id": "business-003",
+      "customer_id": "customer-003",
+      "service_id": "service-003",
+      "staff_id": "staff-003",
+      "preferred_date_range": {
+        "start": "2026-09-27",
+        "end": "2026-09-29"
+      },
+      "preferred_time_range": {
+        "start": "2026-09-27T10:00:00Z",
+        "end": "2026-09-29T18:00:00Z"
+      },
+      "status": "booked",
+      "created_at": "2026-09-18T11:00:00Z"
+    }
+  ],
+  "last_minute_slot": [
+    {
+      "_id": "lastminute-001",
+      "business_id": "business-001",
+      "staff_id": "staff-001",
+      "service_id": "service-001",
+      "start_at": "2026-09-24T16:00:00Z",
+      "discount_pct": 20,
+      "is_booked": false
+    },
+    {
+      "_id": "lastminute-002",
+      "business_id": "business-002",
+      "staff_id": "staff-002",
+      "service_id": "service-002",
+      "start_at": "2026-09-25T15:00:00Z",
+      "discount_pct": 15,
+      "is_booked": false
+    },
+    {
+      "_id": "lastminute-003",
+      "business_id": "business-003",
+      "staff_id": "staff-003",
+      "service_id": "service-003",
+      "start_at": "2026-09-26T14:00:00Z",
+      "discount_pct": 10,
+      "is_booked": true
+    }
+  ],
+  "payment": [
+    {
+      "_id": "payment-001",
+      "appointment_id": "appointment-001",
+      "business_id": "business-001",
+      "customer_id": "user-003",
+      "psp_payment_intent_id": "pi_seed_001",
+      "amount_minor": 500,
+      "platform_fee_minor": 50,
+      "tip_minor": 0,
+      "type": "deposit",
+      "status": "succeeded",
+      "created_at": "2026-09-15T09:02:00Z"
+    },
+    {
+      "_id": "payment-002",
+      "appointment_id": "appointment-002",
+      "business_id": "business-002",
+      "customer_id": "customer-002",
+      "psp_payment_intent_id": "pi_seed_002",
+      "amount_minor": 5000,
+      "platform_fee_minor": 500,
+      "tip_minor": 500,
+      "type": "full_payment",
+      "status": "succeeded",
+      "created_at": "2026-09-22T11:01:00Z"
+    },
+    {
+      "_id": "payment-003",
+      "appointment_id": "appointment-003",
+      "business_id": "business-003",
+      "customer_id": "customer-003",
+      "psp_payment_intent_id": "pi_seed_003",
+      "amount_minor": 3800,
+      "platform_fee_minor": 380,
+      "tip_minor": 300,
+      "type": "full_payment",
+      "status": "succeeded",
+      "created_at": "2026-09-23T12:06:00Z"
+    }
+  ],
+  "payment_event": [
+    {
+      "_id": "payment-event-001",
+      "payment_id": "payment-001",
+      "event_type": "payment_intent.succeeded",
+      "raw_payload": {
+        "id": "evt_seed_001",
+        "status": "succeeded"
+      },
+      "received_at": "2026-09-15T09:03:00Z"
+    },
+    {
+      "_id": "payment-event-002",
+      "payment_id": "payment-002",
+      "event_type": "payment_intent.succeeded",
+      "raw_payload": {
+        "id": "evt_seed_002",
+        "status": "succeeded"
+      },
+      "received_at": "2026-09-22T11:02:00Z"
+    },
+    {
+      "_id": "payment-event-003",
+      "payment_id": "payment-003",
+      "event_type": "payment_intent.succeeded",
+      "raw_payload": {
+        "id": "evt_seed_003",
+        "status": "succeeded"
+      },
+      "received_at": "2026-09-23T12:07:00Z"
+    }
+  ],
+  "customer_wallet": [
+    {
+      "_id": "user-003",
+      "customer_id": "user-003",
+      "balance_minor": 2500
+    },
+    {
+      "_id": "customer-002",
+      "customer_id": "customer-002",
+      "balance_minor": 1000
+    },
+    {
+      "_id": "customer-003",
+      "customer_id": "customer-003",
+      "balance_minor": 500
+    }
+  ],
+  "wallet_transaction": [
+    {
+      "_id": "wallet-tx-001",
+      "customer_id": "user-003",
+      "amount_minor": 2500,
+      "source": "refund_credit",
+      "reference_id": "payment-001",
+      "created_at": "2026-09-15T10:00:00Z"
+    },
+    {
+      "_id": "wallet-tx-002",
+      "customer_id": "customer-002",
+      "amount_minor": 1000,
+      "source": "referral_credit",
+      "reference_id": "referral-001",
+      "created_at": "2026-09-16T10:00:00Z"
+    },
+    {
+      "_id": "wallet-tx-003",
+      "customer_id": "customer-003",
+      "amount_minor": 500,
+      "source": "loyalty_redeem",
+      "reference_id": "loyalty-tx-003",
+      "created_at": "2026-09-17T10:00:00Z"
+    }
+  ],
+  "gift_card": [
+    {
+      "_id": "giftcard-001",
+      "business_id": "business-001",
+      "code": "LAYAN-HAIR-001",
+      "initial_value_minor": 5000,
+      "remaining_value_minor": 5000,
+      "purchased_by": "user-003",
+      "recipient_customer_id": "customer-002",
+      "delivery_at": "2026-09-20T09:00:00Z",
+      "expires_at": "2027-09-20T09:00:00Z"
+    },
+    {
+      "_id": "giftcard-002",
+      "business_id": "business-002",
+      "code": "LAYAN-GLOW-002",
+      "initial_value_minor": 10000,
+      "remaining_value_minor": 7500,
+      "purchased_by": "customer-002",
+      "recipient_customer_id": "customer-003",
+      "delivery_at": "2026-09-21T09:00:00Z",
+      "expires_at": "2027-09-21T09:00:00Z"
+    },
+    {
+      "_id": "giftcard-003",
+      "business_id": null,
+      "code": "LAYAN-ALL-003",
+      "initial_value_minor": 2500,
+      "remaining_value_minor": 2500,
+      "purchased_by": "customer-003",
+      "recipient_customer_id": "user-003",
+      "delivery_at": "2026-09-22T09:00:00Z",
+      "expires_at": "2027-09-22T09:00:00Z"
+    }
+  ],
+  "membership_plan": [
+    {
+      "_id": "plan-001",
+      "business_id": "business-001",
+      "name": "Barber Monthly",
+      "price_minor": 3000,
+      "billing_interval": "monthly",
+      "included_services": {
+        "service_ids": [
+          "service-001"
+        ],
+        "sessions": 1
+      },
+      "discount_pct": 10
+    },
+    {
+      "_id": "plan-002",
+      "business_id": "business-002",
+      "name": "Beauty Monthly",
+      "price_minor": 6000,
+      "billing_interval": "monthly",
+      "included_services": {
+        "service_ids": [
+          "service-002"
+        ],
+        "sessions": 2
+      },
+      "discount_pct": 15
+    },
+    {
+      "_id": "plan-003",
+      "business_id": "business-003",
+      "name": "Nails Yearly",
+      "price_minor": 35000,
+      "billing_interval": "yearly",
+      "included_services": {
+        "service_ids": [
+          "service-003"
+        ],
+        "sessions": 12
+      },
+      "discount_pct": 20
+    }
+  ],
+  "customer_membership": [
+    {
+      "_id": "membership-001",
+      "customer_id": "user-003",
+      "plan_id": "plan-001",
+      "status": "active",
+      "psp_subscription_id": "sub_seed_001",
+      "current_period_end": "2026-10-01T00:00:00Z"
+    },
+    {
+      "_id": "membership-002",
+      "customer_id": "customer-002",
+      "plan_id": "plan-002",
+      "status": "active",
+      "psp_subscription_id": "sub_seed_002",
+      "current_period_end": "2026-10-02T00:00:00Z"
+    },
+    {
+      "_id": "membership-003",
+      "customer_id": "customer-003",
+      "plan_id": "plan-003",
+      "status": "paused",
+      "psp_subscription_id": "sub_seed_003",
+      "current_period_end": "2027-09-03T00:00:00Z"
+    }
+  ],
+  "service_package": [
+    {
+      "_id": "package-001",
+      "business_id": "business-001",
+      "service_id": "service-001",
+      "name": "5 Haircuts",
+      "session_count": 5,
+      "price_minor": 12000
+    },
+    {
+      "_id": "package-002",
+      "business_id": "business-002",
+      "service_id": "service-002",
+      "name": "3 Styling Sessions",
+      "session_count": 3,
+      "price_minor": 12500
+    },
+    {
+      "_id": "package-003",
+      "business_id": "business-003",
+      "service_id": "service-003",
+      "name": "5 Gel Manicures",
+      "session_count": 5,
+      "price_minor": 16000
+    }
+  ],
+  "customer_package": [
+    {
+      "_id": "customer-package-001",
+      "customer_id": "user-003",
+      "package_id": "package-001",
+      "sessions_remaining": 4,
+      "purchased_at": "2026-09-10T09:00:00Z",
+      "expires_at": "2027-03-10T09:00:00Z"
+    },
+    {
+      "_id": "customer-package-002",
+      "customer_id": "customer-002",
+      "package_id": "package-002",
+      "sessions_remaining": 2,
+      "purchased_at": "2026-09-11T09:00:00Z",
+      "expires_at": "2027-03-11T09:00:00Z"
+    },
+    {
+      "_id": "customer-package-003",
+      "customer_id": "customer-003",
+      "package_id": "package-003",
+      "sessions_remaining": 5,
+      "purchased_at": "2026-09-12T09:00:00Z",
+      "expires_at": "2027-03-12T09:00:00Z"
+    }
+  ],
+  "inventory_item": [
+    {
+      "_id": "inventory-001",
+      "business_id": "business-001",
+      "location_id": "location-001",
+      "sku": "BRB-SHAM-001",
+      "name": "Barber Shampoo",
+      "supplier": "Pro Hair Supply",
+      "cost_minor": 700,
+      "sell_price_minor": 1500,
+      "quantity": 20,
+      "low_stock_threshold": 5
+    },
+    {
+      "_id": "inventory-002",
+      "business_id": "business-002",
+      "location_id": "location-002",
+      "sku": "SAL-CON-002",
+      "name": "Hair Conditioner",
+      "supplier": "Beauty Supply Co",
+      "cost_minor": 900,
+      "sell_price_minor": 1800,
+      "quantity": 15,
+      "low_stock_threshold": 5
+    },
+    {
+      "_id": "inventory-003",
+      "business_id": "business-003",
+      "location_id": "location-003",
+      "sku": "NAI-GEL-003",
+      "name": "Gel Polish",
+      "supplier": "Nail Pro",
+      "cost_minor": 500,
+      "sell_price_minor": 1200,
+      "quantity": 30,
+      "low_stock_threshold": 8
+    }
+  ],
+  "stock_movement": [
+    {
+      "_id": "stock-move-001",
+      "inventory_item_id": "inventory-001",
+      "delta": -2,
+      "reason": "used_in_service",
+      "reference_id": "appointment-001",
+      "created_at": "2026-09-21T10:50:00Z"
+    },
+    {
+      "_id": "stock-move-002",
+      "inventory_item_id": "inventory-002",
+      "delta": -1,
+      "reason": "sold",
+      "reference_id": "appointment-002",
+      "created_at": "2026-09-22T11:10:00Z"
+    },
+    {
+      "_id": "stock-move-003",
+      "inventory_item_id": "inventory-003",
+      "delta": -1,
+      "reason": "used_in_service",
+      "reference_id": "appointment-003",
+      "created_at": "2026-09-23T12:10:00Z"
+    }
+  ],
+  "customer_business_profile": [
+    {
+      "_id": "cbp-001",
+      "customer_id": "user-003",
+      "business_id": "business-001",
+      "total_spend_minor": 8500,
+      "visit_count": 3,
+      "avg_spend_minor": 2833,
+      "last_visit_at": "2026-09-21T10:45:00Z",
+      "no_show_count": 0,
+      "cancellation_count": 0,
+      "predicted_rebook_cycle_days": 30,
+      "notes": "Prefers short sides.",
+      "allergies": null,
+      "marketing_permission": true
+    },
+    {
+      "_id": "cbp-002",
+      "customer_id": "customer-002",
+      "business_id": "business-002",
+      "total_spend_minor": 12000,
+      "visit_count": 2,
+      "avg_spend_minor": 6000,
+      "last_visit_at": "2026-09-22T11:00:00Z",
+      "no_show_count": 0,
+      "cancellation_count": 1,
+      "predicted_rebook_cycle_days": 45,
+      "notes": "Prefers natural styling.",
+      "allergies": "None reported",
+      "marketing_permission": true
+    },
+    {
+      "_id": "cbp-003",
+      "customer_id": "customer-003",
+      "business_id": "business-003",
+      "total_spend_minor": 3800,
+      "visit_count": 1,
+      "avg_spend_minor": 3800,
+      "last_visit_at": "2026-09-23T12:05:00Z",
+      "no_show_count": 0,
+      "cancellation_count": 0,
+      "predicted_rebook_cycle_days": 28,
+      "notes": "Likes neutral colors.",
+      "allergies": null,
+      "marketing_permission": false
+    }
+  ],
+  "consultation_form_template": [
+    {
+      "_id": "template-001",
+      "business_id": "business-001",
+      "name": "Hair Consultation",
+      "schema": {
+        "fields": [
+          {
+            "name": "hair_type",
+            "type": "text"
+          },
+          {
+            "name": "desired_style",
+            "type": "text"
+          }
+        ]
+      }
+    },
+    {
+      "_id": "template-002",
+      "business_id": "business-002",
+      "name": "Beauty Consultation",
+      "schema": {
+        "fields": [
+          {
+            "name": "skin_sensitivity",
+            "type": "text"
+          },
+          {
+            "name": "desired_style",
+            "type": "text"
+          }
+        ]
+      }
+    },
+    {
+      "_id": "template-003",
+      "business_id": "business-003",
+      "name": "Nail Consultation",
+      "schema": {
+        "fields": [
+          {
+            "name": "allergies",
+            "type": "text"
+          },
+          {
+            "name": "color_preference",
+            "type": "text"
+          }
+        ]
+      }
+    }
+  ],
+  "consultation_form_submission": [
+    {
+      "_id": "submission-001",
+      "template_id": "template-001",
+      "customer_id": "user-003",
+      "appointment_id": "appointment-001",
+      "answers": {
+        "hair_type": "straight",
+        "desired_style": "classic fade"
+      },
+      "signature_url": "https://example.com/signature-001.png",
+      "submitted_at": "2026-09-21T09:30:00Z"
+    },
+    {
+      "_id": "submission-002",
+      "template_id": "template-002",
+      "customer_id": "customer-002",
+      "appointment_id": "appointment-002",
+      "answers": {
+        "skin_sensitivity": "low",
+        "desired_style": "natural"
+      },
+      "signature_url": "https://example.com/signature-002.png",
+      "submitted_at": "2026-09-22T09:30:00Z"
+    },
+    {
+      "_id": "submission-003",
+      "template_id": "template-003",
+      "customer_id": "customer-003",
+      "appointment_id": "appointment-003",
+      "answers": {
+        "allergies": "none",
+        "color_preference": "nude"
+      },
+      "signature_url": "https://example.com/signature-003.png",
+      "submitted_at": "2026-09-23T10:30:00Z"
+    }
+  ],
+  "loyalty_program": [
+    {
+      "_id": "loyalty-program-001",
+      "business_id": "business-001",
+      "rules": {
+        "points_per_pound": 1,
+        "reward_thresholds": [
+          {
+            "points": 100,
+            "reward_minor": 500
+          }
+        ]
+      }
+    },
+    {
+      "_id": "loyalty-program-002",
+      "business_id": "business-002",
+      "rules": {
+        "points_per_pound": 2,
+        "reward_thresholds": [
+          {
+            "points": 200,
+            "reward_minor": 1000
+          }
+        ]
+      }
+    },
+    {
+      "_id": "loyalty-program-003",
+      "business_id": "business-003",
+      "rules": {
+        "points_per_pound": 1,
+        "reward_thresholds": [
+          {
+            "points": 150,
+            "reward_minor": 750
+          }
+        ]
+      }
+    }
+  ],
+  "loyalty_account": [
+    {
+      "_id": "loyalty-account-001",
+      "customer_id": "user-003",
+      "business_id": "business-001",
+      "points_balance": 120
+    },
+    {
+      "_id": "loyalty-account-002",
+      "customer_id": "customer-002",
+      "business_id": "business-002",
+      "points_balance": 250
+    },
+    {
+      "_id": "loyalty-account-003",
+      "customer_id": "customer-003",
+      "business_id": "business-003",
+      "points_balance": 80
+    }
+  ],
+  "loyalty_transaction": [
+    {
+      "_id": "loyalty-tx-001",
+      "customer_id": "user-003",
+      "business_id": "business-001",
+      "points_delta": 50,
+      "reason": "appointment_completed",
+      "reference_id": "appointment-001",
+      "created_at": "2026-09-21T11:00:00Z"
+    },
+    {
+      "_id": "loyalty-tx-002",
+      "customer_id": "customer-002",
+      "business_id": "business-002",
+      "points_delta": 100,
+      "reason": "appointment_completed",
+      "reference_id": "appointment-002",
+      "created_at": "2026-09-22T12:00:00Z"
+    },
+    {
+      "_id": "loyalty-tx-003",
+      "customer_id": "customer-003",
+      "business_id": "business-003",
+      "points_delta": 80,
+      "reason": "appointment_completed",
+      "reference_id": "appointment-003",
+      "created_at": "2026-09-23T13:00:00Z"
+    }
+  ],
+  "referral": [
+    {
+      "_id": "referral-001",
+      "referrer_customer_id": "user-003",
+      "business_id": "business-001",
+      "code": "RIJOAN001",
+      "reward_referrer_minor": 1000,
+      "reward_referee_minor": 500
+    },
+    {
+      "_id": "referral-002",
+      "referrer_customer_id": "customer-002",
+      "business_id": "business-002",
+      "code": "JAMES002",
+      "reward_referrer_minor": 1500,
+      "reward_referee_minor": 750
+    },
+    {
+      "_id": "referral-003",
+      "referrer_customer_id": "customer-003",
+      "business_id": null,
+      "code": "SOFIA003",
+      "reward_referrer_minor": 1000,
+      "reward_referee_minor": 1000
+    }
+  ],
+  "referral_redemption": [
+    {
+      "_id": "redemption-001",
+      "referral_id": "referral-001",
+      "referee_customer_id": "customer-002",
+      "qualifying_appointment_id": "appointment-002",
+      "redeemed_at": "2026-09-22T12:30:00Z"
+    },
+    {
+      "_id": "redemption-002",
+      "referral_id": "referral-002",
+      "referee_customer_id": "customer-003",
+      "qualifying_appointment_id": "appointment-003",
+      "redeemed_at": "2026-09-23T13:30:00Z"
+    },
+    {
+      "_id": "redemption-003",
+      "referral_id": "referral-003",
+      "referee_customer_id": "user-003",
+      "qualifying_appointment_id": "appointment-001",
+      "redeemed_at": "2026-09-21T11:30:00Z"
+    }
+  ],
+  "customer_favourite": [
+    {
+      "_id": "favourite-001",
+      "customer_id": "user-003",
+      "target_type": "business",
+      "target_id": "business-001",
+      "created_at": "2026-09-10T09:00:00Z"
+    },
+    {
+      "_id": "favourite-002",
+      "customer_id": "customer-002",
+      "target_type": "staff",
+      "target_id": "staff-002",
+      "created_at": "2026-09-11T09:00:00Z"
+    },
+    {
+      "_id": "favourite-003",
+      "customer_id": "customer-003",
+      "target_type": "service",
+      "target_id": "service-003",
+      "created_at": "2026-09-12T09:00:00Z"
+    }
+  ],
+  "message_thread": [
+    {
+      "_id": "thread-001",
+      "business_id": "business-001",
+      "customer_id": "user-003",
+      "appointment_id": "appointment-001"
+    },
+    {
+      "_id": "thread-002",
+      "business_id": "business-002",
+      "customer_id": "customer-002",
+      "appointment_id": "appointment-002"
+    },
+    {
+      "_id": "thread-003",
+      "business_id": "business-003",
+      "customer_id": "customer-003",
+      "appointment_id": "appointment-003"
+    }
+  ],
+  "message": [
+    {
+      "_id": "message-001",
+      "thread_id": "thread-001",
+      "sender_type": "customer",
+      "sender_id": "user-003",
+      "body": "Can I arrive 5 minutes early?",
+      "image_url": null,
+      "sent_at": "2026-09-20T10:00:00Z"
+    },
+    {
+      "_id": "message-002",
+      "thread_id": "thread-002",
+      "sender_type": "business",
+      "sender_id": "user-002",
+      "body": "Yes, please arrive 10 minutes early.",
+      "image_url": null,
+      "sent_at": "2026-09-21T10:00:00Z"
+    },
+    {
+      "_id": "message-003",
+      "thread_id": "thread-003",
+      "sender_type": "system",
+      "sender_id": null,
+      "body": "Your appointment reminder is ready.",
+      "image_url": null,
+      "sent_at": "2026-09-22T10:00:00Z"
+    }
+  ],
+  "review": [
+    {
+      "_id": "review-001",
+      "appointment_id": "appointment-001",
+      "business_id": "business-001",
+      "customer_id": "user-003",
+      "overall_rating": 5,
+      "service_rating": 5,
+      "cleanliness_rating": 5,
+      "value_rating": 4,
+      "professionalism_rating": 5,
+      "punctuality_rating": 5,
+      "comment": "Great service.",
+      "photo_urls": [],
+      "business_reply": "Thank you!",
+      "is_verified_booking": true,
+      "created_at": "2026-09-21T12:00:00Z"
+    },
+    {
+      "_id": "review-002",
+      "appointment_id": "appointment-002",
+      "business_id": "business-002",
+      "customer_id": "customer-002",
+      "overall_rating": 4,
+      "service_rating": 5,
+      "cleanliness_rating": 4,
+      "value_rating": 4,
+      "professionalism_rating": 5,
+      "punctuality_rating": 4,
+      "comment": "Very good styling.",
+      "photo_urls": [],
+      "business_reply": "Thanks for visiting.",
+      "is_verified_booking": true,
+      "created_at": "2026-09-22T13:00:00Z"
+    },
+    {
+      "_id": "review-003",
+      "appointment_id": "appointment-003",
+      "business_id": "business-003",
+      "customer_id": "customer-003",
+      "overall_rating": 5,
+      "service_rating": 5,
+      "cleanliness_rating": 5,
+      "value_rating": 5,
+      "professionalism_rating": 5,
+      "punctuality_rating": 5,
+      "comment": "Loved the manicure.",
+      "photo_urls": [
+        "https://example.com/review-nails.jpg"
+      ],
+      "business_reply": "Thank you!",
+      "is_verified_booking": true,
+      "created_at": "2026-09-23T14:00:00Z"
+    }
+  ],
+  "business_badge": [
+    {
+      "_id": "business-001_verified",
+      "business_id": "business-001",
+      "badge_type": "verified",
+      "awarded_at": "2026-09-05T09:00:00Z"
+    },
+    {
+      "_id": "business-002_verified",
+      "business_id": "business-002",
+      "badge_type": "identity_verified",
+      "awarded_at": "2026-09-06T09:00:00Z"
+    },
+    {
+      "_id": "business-003_popular",
+      "business_id": "business-003",
+      "badge_type": "popular",
+      "awarded_at": "2026-09-07T09:00:00Z"
+    }
+  ],
+  "fraud_flag": [
+    {
+      "_id": "fraud-001",
+      "entity_type": "customer",
+      "entity_id": "user-003",
+      "flag_type": "multiple_accounts",
+      "severity": "low",
+      "details": {
+        "reason": "Test seed flag"
+      },
+      "status": "dismissed",
+      "created_at": "2026-09-10T09:00:00Z"
+    },
+    {
+      "_id": "fraud-002",
+      "entity_type": "payment",
+      "entity_id": "payment-002",
+      "flag_type": "velocity_check",
+      "severity": "medium",
+      "details": {
+        "attempts": 3
+      },
+      "status": "investigating",
+      "created_at": "2026-09-11T09:00:00Z"
+    },
+    {
+      "_id": "fraud-003",
+      "entity_type": "business",
+      "entity_id": "business-003",
+      "flag_type": "review_pattern",
+      "severity": "low",
+      "details": {
+        "matched_reviews": 4
+      },
+      "status": "open",
+      "created_at": "2026-09-12T09:00:00Z"
+    }
+  ],
+  "dispute": [
+    {
+      "_id": "dispute-001",
+      "payment_id": "payment-001",
+      "raised_by": "user-003",
+      "reason": "Service issue",
+      "status": "open",
+      "resolution": null,
+      "created_at": "2026-09-21T15:00:00Z"
+    },
+    {
+      "_id": "dispute-002",
+      "payment_id": "payment-002",
+      "raised_by": "customer-002",
+      "reason": "Unexpected charge",
+      "status": "investigating",
+      "resolution": null,
+      "created_at": "2026-09-22T15:00:00Z"
+    },
+    {
+      "_id": "dispute-003",
+      "payment_id": "payment-003",
+      "raised_by": "customer-003",
+      "reason": "Duplicate payment",
+      "status": "resolved",
+      "resolution": "Refund issued",
+      "created_at": "2026-09-23T15:00:00Z"
+    }
+  ],
+  "promotion": [
+    {
+      "_id": "promotion-001",
+      "business_id": "business-001",
+      "type": "happy_hour",
+      "discount_pct": 15,
+      "rules": {
+        "weekdays": [
+          1,
+          2,
+          3
+        ],
+        "hours": [
+          "14:00",
+          "16:00"
+        ]
+      },
+      "active_from": "2026-09-20T00:00:00Z",
+      "active_to": "2026-10-01T00:00:00Z"
+    },
+    {
+      "_id": "promotion-002",
+      "business_id": "business-002",
+      "type": "new_customer",
+      "discount_pct": 20,
+      "rules": {
+        "first_visit": true
+      },
+      "active_from": "2026-09-20T00:00:00Z",
+      "active_to": "2026-10-15T00:00:00Z"
+    },
+    {
+      "_id": "promotion-003",
+      "business_id": "business-003",
+      "type": "flash_sale",
+      "discount_pct": 25,
+      "rules": {
+        "max_redemptions": 50
+      },
+      "active_from": "2026-09-25T00:00:00Z",
+      "active_to": "2026-09-30T00:00:00Z"
+    }
+  ],
+  "promotion_redemption": [
+    {
+      "_id": "promotion-redemption-001",
+      "promotion_id": "promotion-001",
+      "appointment_id": "appointment-001",
+      "discount_applied_minor": 420
+    },
+    {
+      "_id": "promotion-redemption-002",
+      "promotion_id": "promotion-002",
+      "appointment_id": "appointment-002",
+      "discount_applied_minor": 1000
+    },
+    {
+      "_id": "promotion-redemption-003",
+      "promotion_id": "promotion-003",
+      "appointment_id": "appointment-003",
+      "discount_applied_minor": 950
+    }
+  ],
+  "marketing_campaign": [
+    {
+      "_id": "campaign-001",
+      "business_id": "business-001",
+      "channel": "sms",
+      "template": "Your next haircut is waiting.",
+      "segment_definition": {
+        "visit_count_gte": 2
+      },
+      "status": "scheduled",
+      "scheduled_at": "2026-09-25T09:00:00Z",
+      "is_ai_generated": false
+    },
+    {
+      "_id": "campaign-002",
+      "business_id": "business-002",
+      "channel": "email",
+      "template": "20% off your first beauty booking.",
+      "segment_definition": {
+        "new_customer": true
+      },
+      "status": "draft",
+      "scheduled_at": null,
+      "is_ai_generated": true
+    },
+    {
+      "_id": "campaign-003",
+      "business_id": "business-003",
+      "channel": "push",
+      "template": "Flash sale: 25% off.",
+      "segment_definition": {
+        "marketing_permission": true
+      },
+      "status": "sent",
+      "scheduled_at": "2026-09-20T09:00:00Z",
+      "is_ai_generated": true
+    }
+  ],
+  "campaign_recipient": [
+    {
+      "_id": "recipient-001",
+      "campaign_id": "campaign-001",
+      "customer_id": "user-003",
+      "status": "queued",
+      "sent_at": null
+    },
+    {
+      "_id": "recipient-002",
+      "campaign_id": "campaign-002",
+      "customer_id": "customer-002",
+      "status": "queued",
+      "sent_at": null
+    },
+    {
+      "_id": "recipient-003",
+      "campaign_id": "campaign-003",
+      "customer_id": "customer-003",
+      "status": "sent",
+      "sent_at": "2026-09-20T09:05:00Z"
+    }
+  ],
+  "admin_action_log": [
+    {
+      "_id": "admin-action-001",
+      "admin_id": "user-001",
+      "action": "verify_business",
+      "entity_type": "business",
+      "entity_id": "business-001",
+      "details": {
+        "status": "business"
+      },
+      "created_at": "2026-09-05T09:00:00Z"
+    },
+    {
+      "_id": "admin-action-002",
+      "admin_id": "user-001",
+      "action": "update_service",
+      "entity_type": "service",
+      "entity_id": "service-002",
+      "details": {
+        "field": "base_price_minor",
+        "value": 4500
+      },
+      "created_at": "2026-09-06T09:00:00Z"
+    },
+    {
+      "_id": "admin-action-003",
+      "admin_id": "user-001",
+      "action": "resolve_dispute",
+      "entity_type": "dispute",
+      "entity_id": "dispute-003",
+      "details": {
+        "resolution": "Refund issued"
+      },
+      "created_at": "2026-09-23T16:00:00Z"
+    }
+  ]
+}
