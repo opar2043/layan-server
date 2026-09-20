@@ -1,7 +1,9 @@
 import "dotenv/config";
-import express from "express";
+import express, { type NextFunction, type Request, type Response } from "express";
 import cors from "cors";
-import { MongoClient, ServerApiVersion, type Db } from "mongodb";
+import { connectDb, disconnectDb } from "./src/shared/db";
+import { sendError } from "./src/shared/response";
+import routes from "./src/routes";
 
 const app = express();
 
@@ -12,40 +14,32 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017";
 const DB_NAME = process.env.DB_NAME || "layan";
 const PORT = Number(process.env.PORT || 3000);
 
-const client = new MongoClient(MONGODB_URI, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
-let db: Db | null = null;
-
 app.get("/", (_req, res) => {
-  res.json({
-    message: "Layan API is running",
-    database: db?.databaseName ?? "not connected",
-  });
+  res.json({ message: "Layan API is running" });
 });
 
-async function connectToDatabase(): Promise<void> {
+app.use("/api", routes);
+
+app.use((_req, res) => sendError(res, 404, "Endpoint not found"));
+
+app.use((error: unknown, _req: Request, res: Response, _next: NextFunction) => {
+  console.error(error);
+  sendError(res, 500, "Internal server error");
+});
+
+const server = app.listen(PORT, async () => {
+  console.log(`Server listening on http://localhost:${PORT}`);
   try {
-    await client.db(DB_NAME).command({ ping: 1 });
-    db = client.db(DB_NAME);
+    await connectDb(MONGODB_URI, DB_NAME);
     console.log(`Connected to MongoDB database "${DB_NAME}"`);
   } catch (error) {
     console.error("MongoDB connection failed:", error);
   }
-}
-
-const server = app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
-  connectToDatabase();
 });
 
 const shutdown = async () => {
   server.close();
-  await client.close();
+  await disconnectDb();
   process.exit(0);
 };
 
