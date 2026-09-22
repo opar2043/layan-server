@@ -167,29 +167,6 @@ Every resource module exposes the same routes:
 
 Example:
 
-```bash
-# List all businesses
-curl http://localhost:3000/api/business
-
-# Get one business
-curl http://localhost:3000/api/business/business-001
-
-# Create a business
-curl -X POST http://localhost:3000/api/business \
-  -H "Content-Type: application/json" \
-  -d '{ "legal_name": "Acme Salon Ltd", "display_name": "Acme Salon" }'
-
-# Update
-curl -X PUT http://localhost:3000/api/business/business-001 \
-  -H "Content-Type: application/json" \
-  -d '{ "display_name": "Acme Salon & Spa" }'
-
-# Delete
-curl -X DELETE http://localhost:3000/api/business/business-001
-```
-
-On `POST` the server auto-generates `_id` and `created_at` when they are not supplied.
-On `PUT` the fields in the request body are merged into the existing document (`_id` can never be changed).
 
 ---
 
