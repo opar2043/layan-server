@@ -21,14 +21,19 @@ export const register: AuthHandler = async (req, res) => {
     _id: generateId("app_user"),
     email,
     phone: phone ?? "",
-    password_hash: hashPassword(password),
+    password_hash: await hashPassword(password),
     user_type: user_type ?? "customer",
     created_at: isoNow(),
   };
 
   await users.insertOne(user);
 
-  const token = signToken({ sub: user._id, email: user.email, user_type: user.user_type });
+  const userToken= { 
+    sub: user._id,
+    email: user.email, 
+    user_type: user.user_type
+  }
+  const token = signToken(userToken);
   return sendSuccess(res, { token, user }, 201);
 };
 
@@ -39,11 +44,15 @@ export const login: AuthHandler = async (req, res) => {
   if (!email || !password) return sendError(res, 400, "email and password are required");
 
   const user = await users.findOne({ email });
-  if (!user || typeof user.password_hash !== "string" || !verifyPassword(password, user.password_hash)) {
+  if (!user || typeof user.password_hash !== "string" || !(await verifyPassword(password, user.password_hash))) {
     return sendError(res, 401, "Invalid credentials");
   }
 
-  const token = signToken({ sub: user._id, email: user.email, user_type: user.user_type });
+  const token = signToken({
+    sub: user._id,
+    ...(typeof user.email === "string" ? { email: user.email } : {}),
+    ...(typeof user.user_type === "string" ? { user_type: user.user_type } : {}),
+  });
   return sendSuccess(res, { token, user });
 };
 
