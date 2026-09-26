@@ -1,26 +1,46 @@
 import "dotenv/config";
 import app from "./src/app";
-import { connectDb, disconnectDb } from "./src/shared/db";
+import { config } from "./src/shared/config";
+import { connectDb, disconnectDb, ensureIndexes, isDbConnected } from "./src/shared/db";
+import { startScheduler } from "./src/module/jobs/jobs";
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017";
-const DB_NAME = process.env.DB_NAME || "layan";
-const PORT = Number(process.env.PORT || 3000);
+/**
+ * Connect and index *before* listening. The previous order accepted traffic while
+ * the database was still connecting, so the first requests after a cold start
+ * failed even though the process looked healthy.
+ */
+async function main(): Promise<void> {
+  await connectDb(config.mongoUri, config.dbName);
+  console.log(`Connected to MongoDB database "${config.dbName}"`);
+  await ensureIndexes();
 
-const server = app.listen(PORT, async () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
-  try {
-    await connectDb(MONGODB_URI, DB_NAME);
-    console.log(`Connected to MongoDB database "${DB_NAME}"`);
-  } catch (error) {
-    console.error("MongoDB connection failed:", error);
+  let scheduler: { stop: () => void } | null = null;
+  if (config.schedulerEnabled) {
+    scheduler = startScheduler();
+    console.log("In-process scheduler started");
+  } else {
+    console.log("In-process scheduler disabled (use POST /api/jobs/run instead)");
   }
+
+  const server = app.listen(config.port, () => {
+    console.log(`Server listening on http://localhost:${config.port}`);
+  });
+
+  const shutdown = async (signal: string): Promise<void> => {
+    console.log(`\n${signal} received, shutting down`);
+    scheduler?.stop();
+    server.close();
+    await disconnectDb();
+    process.exit(0);
+  };
+
+  process.on("SIGINT", () => void shutdown("SIGINT"));
+  process.on("SIGTERM", () => void shutdown("SIGTERM"));
+}
+
+main().catch((error) => {
+  console.error("Fatal startup error:", error);
+  process.exit(1);
 });
 
-const shutdown = async () => {
-  server.close();
-  await disconnectDb();
-  process.exit(0);
-};
-
-process.on("SIGINT", shutdown);
-process.on("SIGTERM", shutdown);
+void isDbConnected;

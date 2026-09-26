@@ -1,0 +1,56 @@
+/**
+ * Canonical collection names. These match `data.json` exactly — the seed file is
+ * the source of truth, so nothing in the codebase may invent its own collection name.
+ */
+export const Collections = {
+  users: "users",
+  verificationRequests: "verificationRequests",
+  businesses: "businesses",
+  locations: "locations",
+  staff: "staff",
+  categories: "categories",
+  services: "services",
+  resources: "resources",
+  timeOffs: "timeOffs",
+  bookings: "bookings",
+  waitlists: "waitlists",
+  instantSlots: "instantSlots",
+  orders: "orders",
+  payments: "payments",
+  payouts: "payouts",
+  wallets: "wallets",
+  walletTransactions: "walletTransactions",
+  giftCards: "giftCards",
+  membershipPlans: "membershipPlans",
+  customerMemberships: "customerMemberships",
+  servicePackages: "servicePackages",
+  customerPackages: "customerPackages",
+  customers: "customers",
+  consultationForms: "consultationForms",
+  consultationResponses: "consultationResponses",
+  loyaltyPrograms: "loyaltyPrograms",
+  loyaltyTransactions: "loyaltyTransactions",
+  referralCampaigns: "referralCampaigns",
+  referrals: "referrals",
+  promotions: "promotions",
+  campaigns: "campaigns",
+  portfolioItems: "portfolioItems",
+  reviews: "reviews",
+  favourites: "favourites",
+  conversations: "conversations",
+  messages: "messages",
+  notifications: "notifications",
+  products: "products",
+  businessScores: "businessScores",
+  badgeAwards: "badgeAwards",
+  fraudFlags: "fraudFlags",
+  disputes: "disputes",
+  subscriptions: "subscriptions",
+  importJobs: "importJobs",
+  userActivities: "userActivities",
+  adminActionLogs: "adminActionLogs",
+} as const;
+
+export type CollectionName = (typeof Collections)[keyof typeof Collections];
+
+export const ALL_COLLECTIONS: readonly CollectionName[] = Object.values(Collections);

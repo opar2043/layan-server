@@ -1,102 +1,43 @@
 import { Router } from "express";
 import authRoutes from "../module/auth/route";
-import usersRoutes from "../module/users/route";
-import businessRoutes from "../module/business/route";
-import locationRoutes from "../module/location/route";
 import customerRoutes from "../module/customer/route";
+import businessRoutes from "../module/business/route";
 import staffRoutes from "../module/staff/route";
-import staffavailabilityRoutes from "../module/staff-availability/route";
-import stafftimeoffRoutes from "../module/staff-time-off/route";
-import servicecategoryRoutes from "../module/service-category/route";
-import serviceRoutes from "../module/service/route";
-import staffserviceRoutes from "../module/staff-service/route";
-import portfoliomediaRoutes from "../module/portfolio-media/route";
-import appointmentRoutes from "../module/appointment/route";
-import appointmentserviceRoutes from "../module/appointment-service/route";
-import appointmentstatushistoryRoutes from "../module/appointment-status-history/route";
-import waitlistentryRoutes from "../module/waitlist-entry/route";
-import lastminuteslotRoutes from "../module/last-minute-slot/route";
-import paymentRoutes from "../module/payment/route";
-import paymenteventRoutes from "../module/payment-event/route";
-import customerwalletRoutes from "../module/customer-wallet/route";
-import wallettransactionRoutes from "../module/wallet-transaction/route";
-import giftcardRoutes from "../module/gift-card/route";
-import membershipplanRoutes from "../module/membership-plan/route";
-import customermembershipRoutes from "../module/customer-membership/route";
-import servicepackageRoutes from "../module/service-package/route";
-import customerpackageRoutes from "../module/customer-package/route";
-import inventoryitemRoutes from "../module/inventory-item/route";
-import stockmovementRoutes from "../module/stock-movement/route";
-import customerbusinessprofileRoutes from "../module/customer-business-profile/route";
-import consultationformtemplateRoutes from "../module/consultation-form-template/route";
-import consultationformsubmissionRoutes from "../module/consultation-form-submission/route";
-import loyaltyprogramRoutes from "../module/loyalty-program/route";
-import loyaltyaccountRoutes from "../module/loyalty-account/route";
-import loyaltytransactionRoutes from "../module/loyalty-transaction/route";
-import referralRoutes from "../module/referral/route";
-import referralredemptionRoutes from "../module/referral-redemption/route";
-import customerfavouriteRoutes from "../module/customer-favourite/route";
-import messagethreadRoutes from "../module/message-thread/route";
-import messageRoutes from "../module/message/route";
-import reviewRoutes from "../module/review/route";
-import businessbadgeRoutes from "../module/business-badge/route";
-import fraudflagRoutes from "../module/fraud-flag/route";
-import disputeRoutes from "../module/dispute/route";
-import promotionRoutes from "../module/promotion/route";
-import promotionredemptionRoutes from "../module/promotion-redemption/route";
-import marketingcampaignRoutes from "../module/marketing-campaign/route";
-import campaignrecipientRoutes from "../module/campaign-recipient/route";
-import adminactionlogRoutes from "../module/admin-action-log/route";
+import adminRoutes from "../module/admin/route";
+import publicRoutes from "../module/public/route";
+import conversationRoutes from "../module/conversations/route";
+import jobRoutes from "../module/jobs/route";
 
+/**
+ * The API surface.
+ *
+ * `/public` is intentionally mounted before every authenticated router so that
+ * the marketplace stays reachable without a token, and `/jobs` is last because
+ * it authenticates with a shared secret rather than a user JWT.
+ */
 const router = Router();
 
-router.use("/auth", authRoutes);
-router.use("/users", usersRoutes);
-router.use("/business", businessRoutes);
-router.use("/location", locationRoutes);
-router.use("/customer", customerRoutes);
-router.use("/staff", staffRoutes);
-router.use("/staff-availability", staffavailabilityRoutes);
-router.use("/staff-time-off", stafftimeoffRoutes);
-router.use("/service-category", servicecategoryRoutes);
-router.use("/service", serviceRoutes);
-router.use("/staff-service", staffserviceRoutes);
-router.use("/portfolio-media", portfoliomediaRoutes);
-router.use("/appointment", appointmentRoutes);
-router.use("/appointment-service", appointmentserviceRoutes);
-router.use("/appointment-status-history", appointmentstatushistoryRoutes);
-router.use("/waitlist-entry", waitlistentryRoutes);
-router.use("/last-minute-slot", lastminuteslotRoutes);
-router.use("/payment", paymentRoutes);
-router.use("/payment-event", paymenteventRoutes);
-router.use("/customer-wallet", customerwalletRoutes);
-router.use("/wallet-transaction", wallettransactionRoutes);
-router.use("/gift-card", giftcardRoutes);
-router.use("/membership-plan", membershipplanRoutes);
-router.use("/customer-membership", customermembershipRoutes);
-router.use("/service-package", servicepackageRoutes);
-router.use("/customer-package", customerpackageRoutes);
-router.use("/inventory-item", inventoryitemRoutes);
-router.use("/stock-movement", stockmovementRoutes);
-router.use("/customer-business-profile", customerbusinessprofileRoutes);
-router.use("/consultation-form-template", consultationformtemplateRoutes);
-router.use("/consultation-form-submission", consultationformsubmissionRoutes);
-router.use("/loyalty-program", loyaltyprogramRoutes);
-router.use("/loyalty-account", loyaltyaccountRoutes);
-router.use("/loyalty-transaction", loyaltytransactionRoutes);
-router.use("/referral", referralRoutes);
-router.use("/referral-redemption", referralredemptionRoutes);
-router.use("/customer-favourite", customerfavouriteRoutes);
-router.use("/message-thread", messagethreadRoutes);
-router.use("/message", messageRoutes);
-router.use("/review", reviewRoutes);
-router.use("/business-badge", businessbadgeRoutes);
-router.use("/fraud-flag", fraudflagRoutes);
-router.use("/dispute", disputeRoutes);
-router.use("/promotion", promotionRoutes);
-router.use("/promotion-redemption", promotionredemptionRoutes);
-router.use("/marketing-campaign", marketingcampaignRoutes);
-router.use("/campaign-recipient", campaignrecipientRoutes);
-router.use("/admin-action-log", adminactionlogRoutes);
+router.get("/health", (_req, res) => {
+  res.json({ success: true, data: { status: "ok", service: "layan-api" } });
+});
+
+/**
+ * The mount table, exported so tooling (the route smoke test, docs) enumerates
+ * the same routes the server serves instead of keeping a second list.
+ */
+export const API_MODULES = [
+  { prefix: "/public", router: publicRoutes },
+  { prefix: "/auth", router: authRoutes },
+  { prefix: "/customer", router: customerRoutes },
+  { prefix: "/business", router: businessRoutes },
+  { prefix: "/staff", router: staffRoutes },
+  { prefix: "/admin", router: adminRoutes },
+  { prefix: "/conversations", router: conversationRoutes },
+  { prefix: "/jobs", router: jobRoutes },
+] as const;
+
+for (const { prefix, router: moduleRouter } of API_MODULES) {
+  router.use(prefix, moduleRouter);
+}
 
 export default router;
