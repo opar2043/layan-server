@@ -3,7 +3,7 @@
 A clean, modular **Express + TypeScript + MongoDB** backend powering the Layan booking & marketplace platform.
 
 Every database collection from `data.json` gets its own module folder under `src/module/`, exposing standard CRUD over REST. Common helpers live in `src/shared/` and JWT auth lives in `src/auth/`.
-
+(code will updated soon)
 ---
 
 ## Quick Start
