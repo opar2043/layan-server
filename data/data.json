@@ -1,0 +1,424 @@
+{
+  "admins": [
+    {
+      "_id": "65f1a0000000000000000001",
+      "name": "Sarah Malik",
+      "email": "sarah.admin@layan.com",
+      "passwordHash": "$2a$10$examplehash1234567890abcdefghijklmno",
+      "createdAt": "2026-01-05T09:00:00.000Z"
+    },
+    {
+      "_id": "65f1a0000000000000000002",
+      "name": "Tom Reyes",
+      "email": "tom.admin@layan.com",
+      "passwordHash": "$2a$10$examplehash0987654321zyxwvutsrqponml",
+      "createdAt": "2026-01-06T09:00:00.000Z"
+    }
+  ],
+
+  "businesses": [
+    {
+      "_id": "65f1b0000000000000000001",
+      "ownerName": "Amina Hussain",
+      "email": "amina@glowsalon.com",
+      "passwordHash": "$2a$10$examplehashOWNER1abcdefghijklmno",
+      "businessName": "Glow Beauty Salon",
+      "category": "salon",
+      "description": "Full-service hair, nails and lash salon in central Birmingham.",
+      "location": {
+        "address": "12 High Street",
+        "city": "Birmingham",
+        "latitude": 52.4862,
+        "longitude": -1.8904,
+        "mobileServiceRadiusKm": 0
+      },
+      "openingHours": "Mon-Sat 9:00-19:00",
+      "coverImage": "https://cdn.layan.com/covers/glow-salon.jpg",
+      "profileImage": "https://cdn.layan.com/profiles/glow-salon.jpg",
+      "portfolio": [
+        "https://cdn.layan.com/portfolio/glow-1.jpg",
+        "https://cdn.layan.com/portfolio/glow-2.jpg"
+      ],
+      "amenities": ["wifi", "parking", "wheelchair_accessible"],
+      "cancellationPolicy": "Free cancellation up to 24 hours before appointment.",
+      "instantBookEnabled": true,
+      "verificationStatus": "approved",
+      "isBusinessVerified": true,
+      "isIdentityVerified": true,
+      "badges": ["Identity Verified", "Top Professional"],
+      "masterAccountId": null,
+      "bookingUrl": "https://layan.com/book/glow-beauty-salon",
+      "businessScore": 87,
+      "createdAt": "2026-01-10T10:00:00.000Z",
+      "updatedAt": "2026-02-01T12:00:00.000Z"
+    },
+    {
+      "_id": "65f1b0000000000000000002",
+      "ownerName": "Marcus Reid",
+      "email": "marcus@sharpfades.com",
+      "passwordHash": "$2a$10$examplehashOWNER2zyxwvutsrqponml",
+      "businessName": "Sharp Fades Barbershop",
+      "category": "barber",
+      "description": "Modern barbershop specialising in skin fades and beard sculpting.",
+      "location": {
+        "address": "45 Corporation St",
+        "city": "London",
+        "latitude": 51.5155,
+        "longitude": -0.0922,
+        "mobileServiceRadiusKm": 10
+      },
+      "openingHours": "Tue-Sun 10:00-20:00",
+      "coverImage": "https://cdn.layan.com/covers/sharp-fades.jpg",
+      "profileImage": "https://cdn.layan.com/profiles/sharp-fades.jpg",
+      "portfolio": ["https://cdn.layan.com/portfolio/fade-1.jpg"],
+      "amenities": ["wifi", "instant_book"],
+      "cancellationPolicy": "50% deposit forfeited on late cancellation.",
+      "instantBookEnabled": true,
+      "verificationStatus": "pending",
+      "isBusinessVerified": false,
+      "isIdentityVerified": false,
+      "badges": [],
+      "masterAccountId": null,
+      "bookingUrl": "https://layan.com/book/sharp-fades-barbershop",
+      "businessScore": 0,
+      "createdAt": "2026-02-15T14:30:00.000Z",
+      "updatedAt": "2026-02-15T14:30:00.000Z"
+    }
+  ],
+
+  "services": [
+    {
+      "_id": "65f1c0000000000000000001",
+      "businessId": "65f1b0000000000000000001",
+      "name": "Gel Manicure",
+      "description": "Long-lasting gel polish with cuticle care.",
+      "category": "nails",
+      "durationMinutes": 45,
+      "price": 28,
+      "bufferMinutes": 10,
+      "leadTimeHours": 2,
+      "cancellationWindowHours": 24,
+      "isInstantBook": true,
+      "requiresConsultationForm": false,
+      "isActive": true,
+      "createdAt": "2026-01-10T10:15:00.000Z",
+      "updatedAt": "2026-01-10T10:15:00.000Z"
+    },
+    {
+      "_id": "65f1c0000000000000000002",
+      "businessId": "65f1b0000000000000000002",
+      "name": "Skin Fade & Beard Trim",
+      "description": "Precision skin fade with beard shaping.",
+      "category": "barber",
+      "durationMinutes": 40,
+      "price": 25,
+      "bufferMinutes": 5,
+      "leadTimeHours": 1,
+      "cancellationWindowHours": 12,
+      "isInstantBook": true,
+      "requiresConsultationForm": false,
+      "isActive": true,
+      "createdAt": "2026-02-15T15:00:00.000Z",
+      "updatedAt": "2026-02-15T15:00:00.000Z"
+    }
+  ],
+
+  "staff": [
+    {
+      "_id": "65f1d0000000000000000001",
+      "businessId": "65f1b0000000000000000001",
+      "name": "Priya Anand",
+      "email": "priya@glowsalon.com",
+      "passwordHash": "$2a$10$examplehashSTAFF1abcdefghijklmno",
+      "permissionLevel": "standard",
+      "servicesOffered": ["65f1c0000000000000000001"],
+      "workingHours": [
+        { "day": "monday", "start": "09:00", "end": "17:00" },
+        { "day": "tuesday", "start": "09:00", "end": "17:00" }
+      ],
+      "timeOff": [],
+      "commissionRate": 20,
+      "isActive": true,
+      "createdAt": "2026-01-12T09:00:00.000Z",
+      "updatedAt": "2026-01-12T09:00:00.000Z"
+    },
+    {
+      "_id": "65f1d0000000000000000002",
+      "businessId": "65f1b0000000000000000002",
+      "name": "Jamal Brooks",
+      "email": "jamal@sharpfades.com",
+      "passwordHash": "$2a$10$examplehashSTAFF2zyxwvutsrqponml",
+      "permissionLevel": "manager",
+      "servicesOffered": ["65f1c0000000000000000002"],
+      "workingHours": [
+        { "day": "wednesday", "start": "10:00", "end": "20:00" }
+      ],
+      "timeOff": [
+        { "start": "2026-03-01T00:00:00.000Z", "end": "2026-03-03T00:00:00.000Z", "reason": "holiday" }
+      ],
+      "commissionRate": 35,
+      "isActive": true,
+      "createdAt": "2026-02-16T09:00:00.000Z",
+      "updatedAt": "2026-02-16T09:00:00.000Z"
+    }
+  ],
+
+  "users": [
+    {
+      "_id": "65f1e0000000000000000001",
+      "firebaseUid": "firebase_uid_customer_001",
+      "name": "Layla Ahmed",
+      "email": "layla.ahmed@gmail.com",
+      "phone": "+447700900123",
+      "genderPreference": "female",
+      "location": { "city": "Birmingham", "latitude": 52.4862, "longitude": -1.8904 },
+      "favouriteCategories": ["nails", "salon"],
+      "favouriteBusinessIds": ["65f1b0000000000000000001"],
+      "referralCode": "LAY7F3K2",
+      "referredBy": null,
+      "createdAt": "2026-01-11T08:00:00.000Z",
+      "updatedAt": "2026-02-01T08:00:00.000Z"
+    },
+    {
+      "_id": "65f1e0000000000000000002",
+      "firebaseUid": "firebase_uid_customer_002",
+      "name": "David Chen",
+      "email": "david.chen@gmail.com",
+      "phone": "+447700900456",
+      "genderPreference": "no_preference",
+      "location": { "city": "London", "latitude": 51.5155, "longitude": -0.0922 },
+      "favouriteCategories": ["barber"],
+      "favouriteBusinessIds": [],
+      "referralCode": "DAV9Q1M4",
+      "referredBy": "LAY7F3K2",
+      "createdAt": "2026-02-16T10:00:00.000Z",
+      "updatedAt": "2026-02-16T10:00:00.000Z"
+    }
+  ],
+
+  "bookings": [
+    {
+      "_id": "65f1f0000000000000000001",
+      "customerId": "65f1e0000000000000000001",
+      "businessId": "65f1b0000000000000000001",
+      "staffId": "65f1d0000000000000000001",
+      "serviceId": "65f1c0000000000000000001",
+      "startTime": "2026-02-20T11:00:00.000Z",
+      "endTime": "2026-02-20T11:45:00.000Z",
+      "status": "attended",
+      "depositAmount": 5,
+      "totalPrice": 28,
+      "amountPaid": 28,
+      "tip": 3,
+      "paymentMethod": "card",
+      "consultationForm": { "allergies": "none", "patchTest": true },
+      "isVerifiedReviewEligible": true,
+      "createdAt": "2026-02-18T09:00:00.000Z",
+      "updatedAt": "2026-02-20T12:00:00.000Z"
+    },
+    {
+      "_id": "65f1f0000000000000000002",
+      "customerId": "65f1e0000000000000000002",
+      "businessId": "65f1b0000000000000000002",
+      "staffId": "65f1d0000000000000000002",
+      "serviceId": "65f1c0000000000000000002",
+      "startTime": "2026-02-25T15:00:00.000Z",
+      "endTime": "2026-02-25T15:40:00.000Z",
+      "status": "confirmed",
+      "depositAmount": 5,
+      "totalPrice": 25,
+      "amountPaid": 5,
+      "tip": 0,
+      "paymentMethod": "wallet",
+      "consultationForm": null,
+      "isVerifiedReviewEligible": false,
+      "createdAt": "2026-02-20T16:00:00.000Z",
+      "updatedAt": "2026-02-20T16:00:00.000Z"
+    }
+  ],
+
+  "reviews": [
+    {
+      "_id": "65f200000000000000000001",
+      "bookingId": "65f1f0000000000000000001",
+      "customerId": "65f1e0000000000000000001",
+      "businessId": "65f1b0000000000000000001",
+      "ratings": {
+        "overall": 5,
+        "service": 5,
+        "cleanliness": 5,
+        "value": 4,
+        "professionalism": 5,
+        "punctuality": 5
+      },
+      "comment": "Priya did an amazing gel manicure, very precise and friendly!",
+      "businessReply": "Thank you so much Layla, see you again soon!",
+      "createdAt": "2026-02-20T13:00:00.000Z"
+    },
+    {
+      "_id": "65f200000000000000000002",
+      "bookingId": "65f1f0000000000000000002",
+      "customerId": "65f1e0000000000000000002",
+      "businessId": "65f1b0000000000000000002",
+      "ratings": {
+        "overall": 4,
+        "service": 4,
+        "cleanliness": 4,
+        "value": 4,
+        "professionalism": 4,
+        "punctuality": 3
+      },
+      "comment": "Good fade, ran about 10 minutes late.",
+      "businessReply": null,
+      "createdAt": "2026-02-25T16:10:00.000Z"
+    }
+  ],
+
+  "wallets": [
+    {
+      "_id": "65f210000000000000000001",
+      "customerId": "65f1e0000000000000000001",
+      "loyaltyPoints": 120,
+      "giftCardBalance": 15,
+      "packageSessions": [
+        { "businessId": "65f1b0000000000000000001", "serviceId": "65f1c0000000000000000001", "sessionsLeft": 3 }
+      ],
+      "updatedAt": "2026-02-20T13:05:00.000Z"
+    },
+    {
+      "_id": "65f210000000000000000002",
+      "customerId": "65f1e0000000000000000002",
+      "loyaltyPoints": 40,
+      "giftCardBalance": 0,
+      "packageSessions": [],
+      "updatedAt": "2026-02-20T16:05:00.000Z"
+    }
+  ],
+
+  "walletTransactions": [
+    {
+      "_id": "65f220000000000000000001",
+      "customerId": "65f1e0000000000000000001",
+      "type": "loyalty_earn",
+      "amount": 28,
+      "note": "Points earned from booking 65f1f0000000000000000001",
+      "createdAt": "2026-02-20T13:05:00.000Z"
+    },
+    {
+      "_id": "65f220000000000000000002",
+      "customerId": "65f1e0000000000000000002",
+      "type": "referral_credit",
+      "amount": 5,
+      "note": "Referral bonus for signing up with code LAY7F3K2",
+      "createdAt": "2026-02-16T10:05:00.000Z"
+    }
+  ],
+
+  "waitlistEntries": [
+    {
+      "_id": "65f230000000000000000001",
+      "customerId": "65f1e0000000000000000002",
+      "businessId": "65f1b0000000000000000001",
+      "serviceId": "65f1c0000000000000000001",
+      "preferredStaffId": "65f1d0000000000000000001",
+      "preferredDates": ["2026-02-22T10:00:00.000Z", "2026-02-23T10:00:00.000Z"],
+      "status": "waiting",
+      "isInstantSlotDiscount": false,
+      "createdAt": "2026-02-19T09:00:00.000Z"
+    },
+    {
+      "_id": "65f230000000000000000002",
+      "customerId": "65f1e0000000000000000001",
+      "businessId": "65f1b0000000000000000002",
+      "serviceId": "65f1c0000000000000000002",
+      "preferredStaffId": null,
+      "preferredDates": ["2026-02-27T09:00:00.000Z"],
+      "status": "notified",
+      "isInstantSlotDiscount": true,
+      "createdAt": "2026-02-21T09:00:00.000Z"
+    }
+  ],
+
+  "messages": [
+    {
+      "_id": "65f240000000000000000001",
+      "threadId": "65f1e0000000000000000001_65f1b0000000000000000001",
+      "customerId": "65f1e0000000000000000001",
+      "businessId": "65f1b0000000000000000001",
+      "senderRole": "customer",
+      "text": "Hi, do you have parking nearby?",
+      "isAutoFaqReply": false,
+      "createdAt": "2026-02-19T10:00:00.000Z"
+    },
+    {
+      "_id": "65f240000000000000000002",
+      "threadId": "65f1e0000000000000000001_65f1b0000000000000000001",
+      "customerId": "65f1e0000000000000000001",
+      "businessId": "65f1b0000000000000000001",
+      "senderRole": "business",
+      "text": "Yes! Free parking is available right behind the salon.",
+      "isAutoFaqReply": true,
+      "createdAt": "2026-02-19T10:01:00.000Z"
+    }
+  ],
+
+  "promotions": [
+    {
+      "_id": "65f250000000000000000001",
+      "businessId": "65f1b0000000000000000001",
+      "title": "Quiet Tuesday - 20% Off Nails",
+      "type": "quiet_day",
+      "discountPercent": 20,
+      "discountAmount": null,
+      "startDate": "2026-02-01T00:00:00.000Z",
+      "endDate": "2026-03-01T00:00:00.000Z",
+      "isActive": true,
+      "createdBy": "owner",
+      "createdAt": "2026-01-25T09:00:00.000Z",
+      "updatedAt": "2026-01-25T09:00:00.000Z"
+    },
+    {
+      "_id": "65f250000000000000000002",
+      "businessId": null,
+      "title": "Layan Welcome Offer - £5 Off First Booking",
+      "type": "new_customer",
+      "discountPercent": null,
+      "discountAmount": 5,
+      "startDate": "2026-01-01T00:00:00.000Z",
+      "endDate": "2026-12-31T00:00:00.000Z",
+      "isActive": true,
+      "createdBy": "admin",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+
+  "disputes": [
+    {
+      "_id": "65f260000000000000000001",
+      "bookingId": "65f1f0000000000000000002",
+      "customerId": "65f1e0000000000000000002",
+      "businessId": "65f1b0000000000000000002",
+      "reason": "Charged full price but service was cut short.",
+      "customerEvidence": "Screenshot of receipt attached.",
+      "businessEvidence": null,
+      "status": "open",
+      "resolutionNote": null,
+      "createdAt": "2026-02-26T09:00:00.000Z",
+      "updatedAt": "2026-02-26T09:00:00.000Z"
+    },
+    {
+      "_id": "65f260000000000000000002",
+      "bookingId": "65f1f0000000000000000001",
+      "customerId": "65f1e0000000000000000001",
+      "businessId": "65f1b0000000000000000001",
+      "reason": "Accidental duplicate charge on card.",
+      "customerEvidence": "Bank statement showing two charges.",
+      "businessEvidence": "Confirmed refund issued for duplicate transaction.",
+      "status": "resolved",
+      "resolutionNote": "Duplicate charge refunded on 2026-02-21.",
+      "createdAt": "2026-02-20T14:00:00.000Z",
+      "updatedAt": "2026-02-21T10:00:00.000Z"
+    }
+  ]
+}
