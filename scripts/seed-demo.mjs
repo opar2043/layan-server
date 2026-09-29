@@ -13,7 +13,7 @@ import { readFileSync } from "node:fs";
 
 const PASSWORD = "12345678";
 const DOMAIN = "layan@gmail.com";
-const API = "http://localhost:3000/api";
+const API = "http://localhost:5000/api";
 
 // This script lives in scripts/, so the backend .env is one level up.
 const backendEnv = readFileSync(new URL("../.env", import.meta.url), "utf8");

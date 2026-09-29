@@ -45,9 +45,14 @@ async function getOrCreateWallet(customerId: string): Promise<IWallet> {
   try {
     const result = await wallets.insertOne(document);
     return (await wallets.findOne({ _id: result.insertedId })) as IWallet;
-  } catch {
-    // Two concurrent first reads: the unique index on customerId means one wins.
-    return (await wallets.findOne({ customerId: customerObjectId })) as IWallet;
+  } catch (error) {
+    // Two concurrent first reads: the unique index on customerId means one wins,
+    // so re-read and use the winner's wallet. Any other failure (or a re-read that
+    // still finds nothing) must surface — returning null here would hand the
+    // customer a blank wallet and mask a real database error.
+    const winner = (await wallets.findOne({ customerId: customerObjectId })) as IWallet | null;
+    if (winner) return winner;
+    throw error;
   }
 }
 
