@@ -7,7 +7,7 @@ Node.js · Express · TypeScript · MongoDB (native driver — no ODM) · **52 e
 ```
 Frontend (Next.js :3000)  ──HTTP──▶  This server (:5000)  ──▶  MongoDB
 ```
-
+url : https://layan-server.vercel.app/
 ---
 
 ## 1. Start here
